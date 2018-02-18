@@ -10,15 +10,25 @@ var gulp        = require('gulp'),
     merge       = require('merge-stream'),
     gutil       = require('gulp-util'),
     browserSync = require('browser-sync'),
-    reload      = browserSync.reload;
+    reload      = browserSync.reload,
     uglify      = require('gulp-uglify');
 
 // define the default task and add the watch task to it
 gulp.task('default', ['watch']);
 
 gulp.task('browser-sync', function() {
+    browserSync.init({
+        proxy: {
+            target: "localhost:3000", // can be [virtual host, sub-directory, localhost with port]
+            ws: true // enables websockets
+        }
+    });
+});
+
+gulp.task('browser-sync', function() {
     var files = [
-    './build/assets/css/theme.css',
+    './build/assets/css/user/theme.css',
+    './build/assets/js/user/theme.js',
     './*.php',
     './page-templates/*.php'
     ];
@@ -43,7 +53,7 @@ gulp.task('eslint', function() {
 });
 
 gulp.task('build-css', function() {
-    return gulp.src('src/scss/*.scss')
+    return gulp.src('src/scss/**/*.scss')
         .pipe(sourcemaps.init())  // Process the original sources
         .pipe(sass({outputStyle: 'compressed'}))
         .pipe(concat('theme.css'))
@@ -59,11 +69,11 @@ gulp.task('build-js', function() {
         //only uglify if gulp is ran with '--type production'
         .pipe(gutil.env.type === 'production' ? uglify() : gutil.noop())
         .pipe(sourcemaps.write())
-        .pipe(gulp.dest('build/assets/js'));
+        .pipe(gulp.dest('build/assets/js/user/'));
 });
 
 // configure which files to watch and what tasks to use on file changes
-gulp.task('watch', function() {
+gulp.task('watch', ['browser-sync'], function() {
     gulp.watch('src/js/user/*.js', ['eslint']);
     gulp.watch('src/js/user/*.js', ['build-js']);
     gulp.watch('src/scss/**/*.scss', ['build-css']);

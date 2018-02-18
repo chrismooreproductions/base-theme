@@ -4,4 +4,34 @@ header {
 
 nav {
     background-color: #990000;
+
+    a {
+        color: white;
+        transition: 0.3s all ease-in-out;
+
+        &:visited {
+            color: white;
+
+        }
+
+        &:hover {
+            color: rgb(182, 170, 144);
+        }
+    }
+
+    .nav-menu {
+        .menu-item {
+            padding:  10px 20px 8px;
+            &:first-child {
+                padding-left: 0;
+            }
+            &:last-child {
+                padding-right: 0;
+            }
+        }
+        .sub-menu {
+            background-color: white;
+            color: black;
+        }
+    }
 }
