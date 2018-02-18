@@ -7,7 +7,7 @@
  * @package smv
  */
 
-add_image_size('header_logo', 600, 109, array('center', 'center'));
+add_image_size('header_logo', 402, 109, array('center', 'center'));
 add_image_size('footer_logo', 75, 75);
 
 if ( ! function_exists( 'smv_setup' ) ) :
@@ -78,8 +78,8 @@ if ( ! function_exists( 'smv_setup' ) ) :
 		 */
 		
 		$header_logo = array(
-			'height'      => 300,
-			'width'       => 500,
+			'height'      => 110,
+			'width'       => 400,
 			'flex-height' => false,
 			'flex-width'  => false,
 			'header-text' => array( 'site-title', 'site-description' )
@@ -95,18 +95,32 @@ function register_members_only_menu() {
 }
 add_action( 'init', 'register_members_only_menu' );
 
+/**
+ * Redirect user after successful login.
+ *
+ * @param string $redirect_to URL to redirect to.
+ * @param string $request URL the user is coming from.
+ * @param object $user Logged user's data.
+ * @return string
+ */
 
-function admin_default_page() {
-
-	if ( in_array( 'administrator', $user->roles ) ) {
-		// redirect them to the default place
-		return $redirect_to;
+function smv_login_redirect( $redirect_to, $request, $user ) {
+	//is there a user to check?
+	if ( isset( $user->roles ) && is_array( $user->roles ) ) {
+		// Check if user is admin
+		if ( in_array( 'administrator', $user->roles ) ) {
+			// Redirect to dashboard
+			return $redirect_to;
+		} else {
+			// Redirect to Members Home Page
+			return home_url();
+		}
 	} else {
-		return home_url();
+		return $redirect_to;
 	}
-
 }
-add_filter('login_redirect', 'admin_default_page');
+
+add_filter( 'login_redirect', 'smv_login_redirect', 10, 3 );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
