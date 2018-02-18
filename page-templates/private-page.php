@@ -9,7 +9,7 @@ if ( !is_user_logged_in() ) :
     
     else :
         
-    get_header();
+    get_header('members');
         
     while ( have_posts() ) : the_post();
 

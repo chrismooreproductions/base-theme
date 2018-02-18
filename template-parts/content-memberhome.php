@@ -10,7 +10,8 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+	<div class="container-fluid">
+	
 	<header class="home-page__header">
         <div class="container">
             <?php the_title( '<h1 class="home-page__header-text">', '</h1>' ); ?>
@@ -52,5 +53,8 @@
 			</footer><!-- .entry-footer -->
 		<?php endif; ?>
 	</div>
+	
+	</div>
+	
 	
 </article><!-- #post-<?php the_ID(); ?> -->

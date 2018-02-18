@@ -12,9 +12,9 @@
     
     else :
 
-        get_header( 'members' );
+    $members_redirect = get_permalink( get_page_by_title( 'Members Home Page' ) );
 
-        echo "Logged in!";
+    wp_redirect( $members_redirect );
 
     endif;
 

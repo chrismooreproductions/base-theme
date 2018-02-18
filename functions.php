@@ -96,6 +96,18 @@ function register_members_only_menu() {
 add_action( 'init', 'register_members_only_menu' );
 
 
+function admin_default_page() {
+
+	if ( in_array( 'administrator', $user->roles ) ) {
+		// redirect them to the default place
+		return $redirect_to;
+	} else {
+		return home_url();
+	}
+
+}
+add_filter('login_redirect', 'admin_default_page');
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *
