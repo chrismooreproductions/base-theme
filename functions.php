@@ -7,7 +7,7 @@
  * @package smv
  */
 
-add_image_size('header_logo', 402, 109, array('center', 'center'));
+add_image_size('header_logo', 400, 110, array('center', 'center'));
 add_image_size('footer_logo', 75, 75);
 
 if ( ! function_exists( 'smv_setup' ) ) :
@@ -78,8 +78,8 @@ if ( ! function_exists( 'smv_setup' ) ) :
 		 */
 		
 		$header_logo = array(
-			'height'      => 110,
 			'width'       => 400,
+			'height'      => 110,
 			'flex-height' => false,
 			'flex-width'  => false,
 			'header-text' => array( 'site-title', 'site-description' )
@@ -105,7 +105,7 @@ add_action( 'init', 'register_members_only_menu' );
  */
 
 function smv_login_redirect( $redirect_to, $request, $user ) {
-	//is there a user to check?
+	// Is there a user logged in?
 	if ( isset( $user->roles ) && is_array( $user->roles ) ) {
 		// Check if user is admin
 		if ( in_array( 'administrator', $user->roles ) ) {
@@ -113,7 +113,7 @@ function smv_login_redirect( $redirect_to, $request, $user ) {
 			return $redirect_to;
 		} else {
 			// Redirect to Members Home Page
-			return home_url();
+			return home_url( '/members-home-page' );
 		}
 	} else {
 		return $redirect_to;
@@ -156,11 +156,16 @@ add_action( 'widgets_init', 'smv_widgets_init' );
  * Enqueue scripts and styles.
  */
 function smv_scripts() {
+
 	wp_enqueue_style( 'smv-style', get_stylesheet_uri() );
 
 	wp_enqueue_style( 'bootstrap', get_stylesheet_directory_uri() . '/build/assets/css/vendor/bootstrap.min.css' );
 
 	wp_enqueue_style( 'underscores', get_stylesheet_directory_uri() . '/build/assets/css/vendor/underscores.css' );
+
+	wp_enqueue_style( 'owl-css', get_stylesheet_directory_uri() . '/build/assets/css/vendor/owl.carousel.min.css' );
+	
+	wp_enqueue_style( 'owl-theme', get_stylesheet_directory_uri() . '/build/assets/css/vendor/owl.theme.default.min.css' );
 
 	wp_enqueue_style( 'compiled-scss', get_stylesheet_directory_uri() . '/build/assets/css/user/theme.css' );
 	
@@ -171,6 +176,8 @@ function smv_scripts() {
 	wp_enqueue_script( 'smv-navigation', get_stylesheet_directory_uri() . '/build/assets/js/vendor/navigation.js', array(jquery), '20151215', true );
 
 	wp_enqueue_script( 'smv-skip-link-focus-fix', get_stylesheet_directory_uri() . '/build/assets/js/vendor/skip-link-focus-fix.js', array(jquery), '20151215', true );
+	
+	wp_enqueue_script( 'owl-js', get_stylesheet_directory_uri() . '/build/assets/js/vendor/owl.carousel.min.js', array(jquery), '20151215', true );
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -199,13 +206,18 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
+ * Bootstrap 4 navwalker
+ */
+require get_template_directory() . '/inc/wp-bootstrap-navwalker.php';
+
+/**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-// Enable ACF Global Options
+// Enable ACF Global Options Page
 if( function_exists('acf_add_options_page') ) {	
 	acf_add_options_page('Theme Settings');
 }

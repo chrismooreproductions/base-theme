@@ -1,2 +1,12 @@
+/*
+ * Import varibles file
+ * In SASS these variables are passed to all the other compiled files below....
+*/
+
 @import "variables/theme-variables";
+
 @import "blocks/header";
+@import "blocks/members-only-menu";
+@import "blocks/errors";
+
+@import "pages/user-profile-update";

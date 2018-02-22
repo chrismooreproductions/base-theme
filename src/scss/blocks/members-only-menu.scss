@@ -1,0 +1,38 @@
+
+.page-template-private-page {
+    nav {
+        background-color: #e3e3e3;
+        color: #b2032b;
+        a {
+            color: #b2032b;
+        }
+    }
+}
+
+#menu-members-only-menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    
+}
+
+.menu-item {
+    display: inline-block;
+    
+    .nav-link {
+        padding: 9px 13px 8px;
+        
+    }
+
+    &:first-of-type {
+        .nav-link {
+            padding-left: 0;
+
+        }
+    }
+}
+
+.nav-link {
+    padding:0;
+
+}

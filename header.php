@@ -33,16 +33,22 @@
 
 	</header>
 
-	<nav id="site-navigation" class="main-navigation">
+	<nav id="site-navigation" class="navbar">
 		<div class="container">
-		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'smv' ); ?></button>
-			<?php
-				wp_nav_menu( array(
-					'theme_location' => 'main-menu',
-					'menu_id'        => 'primary-menu',
-				) );
-			?>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'smv' ); ?></button>
+				<?php
+					wp_nav_menu([
+						'menu'            => 'top',
+						'theme_location'  => 'top',
+						'container'       => 'div',
+						'container_id'    => 'bs4navbar',
+						'container_class' => 'collapse navbar-collapse',
+						'menu_id'         => false,
+						'menu_class'      => 'navbar-nav mr-auto',
+						'depth'           => 2,
+						'fallback_cb'     => 'bs4navwalker::fallback',
+						'walker'          => new bs4navwalker()
+					  ]);
+				?>
 		</div>
 	</nav><!-- #site-navigation -->
-
-	<div id="content" class="site-content">

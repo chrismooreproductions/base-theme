@@ -13,7 +13,9 @@ if ( !is_user_logged_in() ) :
         
     while ( have_posts() ) : the_post();
 
-        get_template_part( 'template-parts/content', 'page' );
+        get_template_part( 'template-parts/content', 'blockbuilder' );
+
+        // get_template_part( 'template-parts/content', 'page' );
 
     endwhile; // End of the loop.
 

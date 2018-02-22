@@ -1,0 +1,240 @@
+{
+    "key": "group_5a8d37af0d40d",
+    "title": "SMV Custom Block Builder",
+    "fields": [
+        {
+            "key": "field_5a8d37b87152a",
+            "label": "Block Builder",
+            "name": "block_builder",
+            "type": "flexible_content",
+            "instructions": "Welcome to the SMV block builder. This is a template based system. Please click the 'Add Block' button to get started...",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layouts": {
+                "5a8d37c259ff4": {
+                    "key": "5a8d37c259ff4",
+                    "name": "splash_slider",
+                    "label": "Splash Slider",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5a8d41d2251d1",
+                            "label": "Slide",
+                            "name": "slide",
+                            "type": "repeater",
+                            "instructions": "Here you can add or remove images and text to create a new slide for the slider.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 0,
+                            "max": 0,
+                            "layout": "block",
+                            "button_label": "",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5a8d42a454f9f",
+                                    "label": "Slide Image",
+                                    "name": "slide_image",
+                                    "type": "image",
+                                    "instructions": "Please select an image for this slide.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "return_format": "id",
+                                    "preview_size": "full",
+                                    "library": "all",
+                                    "min_width": "",
+                                    "min_height": "",
+                                    "min_size": "",
+                                    "max_width": "",
+                                    "max_height": "",
+                                    "max_size": "",
+                                    "mime_types": ""
+                                },
+                                {
+                                    "key": "field_5a8d42b454fa0",
+                                    "label": "Slide Text",
+                                    "name": "slide_text",
+                                    "type": "textarea",
+                                    "instructions": "Please enter the text for this slide",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "Working together with communities across Bristol to improve the quality of life for all.",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "maxlength": "",
+                                    "rows": "",
+                                    "new_lines": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5a8da38217046": {
+                    "key": "5a8da38217046",
+                    "name": "title_text",
+                    "label": "Title Text",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5a8da38c17047",
+                            "label": "Text",
+                            "name": "text",
+                            "type": "text",
+                            "instructions": "Please insert title text here.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5a8da3e039b23": {
+                    "key": "5a8da3e039b23",
+                    "name": "pages_summary_block",
+                    "label": "Pages Summary Block",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5a8da3f839b24",
+                            "label": "Pages",
+                            "name": "pages",
+                            "type": "repeater",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "collapsed": "",
+                            "min": 1,
+                            "max": 4,
+                            "layout": "block",
+                            "button_label": "Add a page...",
+                            "sub_fields": [
+                                {
+                                    "key": "field_5a8da47039b25",
+                                    "label": "Page",
+                                    "name": "page",
+                                    "type": "post_object",
+                                    "instructions": "Select a page for the block.",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "post_type": [],
+                                    "taxonomy": [],
+                                    "allow_null": 0,
+                                    "multiple": 0,
+                                    "return_format": "object",
+                                    "ui": 1
+                                },
+                                {
+                                    "key": "field_5a8da49f39b26",
+                                    "label": "Page Subtitle Text",
+                                    "name": "page_subtitle_text",
+                                    "type": "text",
+                                    "instructions": "Please insert some subtitle text",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": "",
+                                    "placeholder": "",
+                                    "prepend": "",
+                                    "append": "",
+                                    "maxlength": ""
+                                },
+                                {
+                                    "key": "field_5a8da4c039b27",
+                                    "label": "Colour",
+                                    "name": "color",
+                                    "type": "color_picker",
+                                    "instructions": "Please select a colour for the text and border",
+                                    "required": 0,
+                                    "conditional_logic": 0,
+                                    "wrapper": {
+                                        "width": "",
+                                        "class": "",
+                                        "id": ""
+                                    },
+                                    "default_value": ""
+                                }
+                            ]
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                }
+            },
+            "button_label": "Add Block",
+            "min": "",
+            "max": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/private-page.php"
+            }
+        ],
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/public-page.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "the_content"
+    ],
+    "active": 1,
+    "description": "",
+    "modified": 1519233777
+}
