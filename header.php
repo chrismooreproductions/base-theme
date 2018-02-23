@@ -26,29 +26,35 @@
 
 	<header id="masthead" class="site-header">
 		<div class="container">
-			<div class="header-background">
-				<?php the_custom_logo(); ?>
-			</div><!-- .site-branding -->
+			<div class="row">
+				<div class="header-background">
+					<?php the_custom_logo(); ?>
+				</div><!-- .site-branding -->
+			</div>
 		</div>
 
 	</header>
 
-	<nav id="site-navigation" class="navbar">
+	<nav class="navbar navbar-expand-md navbar-public" role="navigation">
 		<div class="container">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'smv' ); ?></button>
-				<?php
-					wp_nav_menu([
-						'menu'            => 'top',
-						'theme_location'  => 'top',
-						'container'       => 'div',
-						'container_id'    => 'bs4navbar',
-						'container_class' => 'collapse navbar-collapse',
-						'menu_id'         => false,
-						'menu_class'      => 'navbar-nav mr-auto',
-						'depth'           => 2,
-						'fallback_cb'     => 'bs4navwalker::fallback',
-						'walker'          => new bs4navwalker()
-					  ]);
-				?>
+			<div class="row">
+				<!-- Brand and toggle get grouped for better mobile display -->
+					<?php
+					wp_nav_menu( array(
+						'menu'				=> 'Main Menu',
+						'theme_location'    => 'primary',
+						'depth'             => 2,
+						'container'         => 'div',
+						'container_class'   => 'collapse navbar-collapse',
+						'container_id'      => 'main-menu',
+						'menu_class'        => 'nav navbar-nav',
+						'fallback_cb'       => 'WP_Bootstrap_Navwalker::fallback',
+						'walker'            => new WP_Bootstrap_Navwalker()
+						) );
+					?>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="main-menu" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+			</div>
 		</div>
-	</nav><!-- #site-navigation -->
+	</nav>

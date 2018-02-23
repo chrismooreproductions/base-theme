@@ -203,6 +203,178 @@
                     ],
                     "min": "",
                     "max": ""
+                },
+                "5a8e8a633acf2": {
+                    "key": "5a8e8a633acf2",
+                    "name": "banner_link_to_pdf",
+                    "label": "Banner Link to PDF",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5a8e8a6e3acf3",
+                            "label": "Banner Text",
+                            "name": "banner_text",
+                            "type": "text",
+                            "instructions": "Please insert some title text to be displayed on the banner.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5a8e8a9c3acf4",
+                            "label": "Document Link",
+                            "name": "document_link",
+                            "type": "file",
+                            "instructions": "Please select the document to display from the banner.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "return_format": "array",
+                            "library": "all",
+                            "min_size": "",
+                            "max_size": "",
+                            "mime_types": ""
+                        },
+                        {
+                            "key": "field_5a8e8cdfe7e99",
+                            "label": "Document Link Text",
+                            "name": "document_link_text",
+                            "type": "text",
+                            "instructions": "Enter some text to act as a link to your document e.g. 'Read our Annual Review'",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
+                },
+                "5a8e977d4abfe": {
+                    "key": "5a8e977d4abfe",
+                    "name": "info_and_news",
+                    "label": "Info and News",
+                    "display": "block",
+                    "sub_fields": [
+                        {
+                            "key": "field_5a8e978c4abff",
+                            "label": "Introduction Title",
+                            "name": "introduction_title",
+                            "type": "text",
+                            "instructions": "Please enter the text required for the introduction title",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5a8e98074ac00",
+                            "label": "Introduction Text",
+                            "name": "introduction_text",
+                            "type": "wysiwyg",
+                            "instructions": "Please enter your text for the introduction to SMV.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "tabs": "text",
+                            "toolbar": "full",
+                            "media_upload": 1,
+                            "delay": 0
+                        },
+                        {
+                            "key": "field_5a8e9b4443981",
+                            "label": "Introduction Page Link",
+                            "name": "introduction_page",
+                            "type": "page_link",
+                            "instructions": "Select a page to link to from the bottom of the introduction text.",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "post_type": [],
+                            "taxonomy": [],
+                            "allow_null": 0,
+                            "allow_archives": 1,
+                            "multiple": 0
+                        },
+                        {
+                            "key": "field_5a8e9b7543982",
+                            "label": "Introduction Page Link Text",
+                            "name": "introduction_page_link_text",
+                            "type": "text",
+                            "instructions": "Enter text for the page link e.g. \"Find out more here >\"",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        },
+                        {
+                            "key": "field_5a8ea54454a89",
+                            "label": "News Section Title",
+                            "name": "news_title_text",
+                            "type": "text",
+                            "instructions": "Insert some title text for the news section",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": "",
+                            "maxlength": ""
+                        }
+                    ],
+                    "min": "",
+                    "max": ""
                 }
             },
             "button_label": "Add Block",
@@ -236,5 +408,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1519233777
+    "modified": 1519317785
 }

@@ -63,7 +63,7 @@ if ( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) && $_POS
 ?>
 
 <?php
-get_header( 'members' ); 
+get_header('members'); 
 ?>
 
 <main id="main" class="site-main">
@@ -169,5 +169,5 @@ get_header( 'members' );
 </main><!-- #main -->
 
 <?php
-get_footer();
-?>
+
+    get_footer();

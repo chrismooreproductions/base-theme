@@ -1,15 +1,17 @@
+$color-primary:     #990000;
+$color-secondary:   #ffffff; 
 
-.navbar-members {
-    background-color: #e3e3e3;
-    color: #b2032b;
-
-    .nav-link {
-        color: #b2032b;
+.page-template-public-page {
+    nav {
+        background-color: $color-primary;
+        color: $color-secondary;
+        a {
+            color: $color-secondary;
+        }
     }
-
 }
 
-#menu-members-only-menu {
+#menu-main-menu {
     padding: 0;
     margin: 0;
     list-style: none;

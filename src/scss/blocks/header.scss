@@ -2,12 +2,96 @@ header {
     background-color: #efefef;
 }
 
+// Styles for all navbars
+
+.navbar {
+    padding: 0;
+}
+
+.custom-logo {
+    max-width: 400px;
+}
+
+.dropdown-menu {
+    margin: 0;
+    border: 2px solid #a92a2a;
+    border-radius: 0;
+}
+
+// The downwards pointing arrow on the bootstrap dropdown menu items is really difficult to get rid of:
+[id^=menu-item-dropdown-] {
+    &::after {
+        margin-left: 0;
+        border: 0;
+    }
+}
+
+.navbar-expand-md .navbar-nav {
+    
+    .active {
+        font-weight: 400;
+    
+    }
+    
+    .nav-link {
+    padding-left: 18px;
+    padding-right: 18px;
+
+    }
+}
+
+.dropdown-menu {
+    padding: 5px 19px;
+    box-shadow: 0px 0px 5px 4px rgba(46, 46, 46, 0.21);
+
+    .nav-item {
+        width: 100%;
+        padding: 0;
+        transition: 0.2s all ease-in-out;
+
+        &:hover {
+            background-color: #f7e8e8;
+        }
+
+        .dropdown-item {
+            border-bottom: 2px solid #c07b7b;
+            padding: 0;
+            margin-top: 7px;
+            padding-left: 5px;
+            padding-bottom: 7px;
+            padding-right: 100px;
+            color: #646464;
+            transition: 0.25s all ease-in-out;
+            
+
+            &:hover {
+                color: black;
+                // text-shadow: 0px 0px 0px #b4b4b4;
+                border-bottom: 2px solid #900;
+            }
+
+        }
+
+        &:last-of-type {
+            .dropdown-item {
+                border-bottom: 0;
+            }
+        }
+
+        .dropdown-item:focus, .dropdown-item:hover {
+            background-color: transparent;
+        }
+    }
+}
+
 nav {
     background-color: #990000;
 
     a {
         color: white;
         transition: 0.3s all ease-in-out;
+
+        
 
         &:visited {
             color: white;
@@ -16,22 +100,34 @@ nav {
 
         &:hover {
             color: rgb(182, 170, 144);
+        
         }
     }
 
     .nav-menu {
+
+        
         .menu-item {
             padding:  10px 20px 8px;
+            
+            &.active {
+                font-weight:600;
+    
+            }
+
             &:first-child {
                 padding-left: 0;
+
             }
             &:last-child {
                 padding-right: 0;
+
             }
         }
         .sub-menu {
             background-color: white;
             color: black;
+
         }
     }
 }
