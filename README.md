@@ -1,8 +1,8 @@
 
-=== Welcome to SMV ===
+=== Welcome to The Discrete Base Theme ===
 
 The aim of this theme is to make seperate out the login and view permissions
-from each other in the back end. By using templates, the SMV theme can re-route
+from each other in the back end. By using templates, the Discrete Base theme can re-route
 to different pages dependant on the user - which makes for a great user, administrator
 and editor experience.
 
